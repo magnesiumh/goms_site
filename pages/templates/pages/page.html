@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<head><meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"> </head>
+<link rel="shortcut-icon" href="static/favicon.ico">
+{%block title%}{{title}}{%endblock title%}
+
+
+{%block sidenav%}
+
+        {% for page  in page_list%}
+    <li> <div class="velement">
+        {% if page.permalink != "/"  and page.title != "Glory of The Morning Star "%}
+        <a href="{{page.permalink}}" onclick="return myfunc();">{{page.title}}</a>
+        </div>
+        {%endif%}
+    </li>
+{%endfor%}
+
+{%endblock sidenav%}
+
+{%block head%}
+
+{% for page  in page_list%}
+
+        {% if page.permalink != "/"  and page.title != "Glory of The Morning Star "%}
+
+{{myfunc}}
+{%endif%}
+{%endfor%}
+{%endblock%}
+{%block content%}
+
+
+
+
+
+<center>
+  {{content|linebreaks }} 
+<div class="word">
+  <span>S</span>
+  <span>H</span>
+  <span>E</span>
+  <span>K</span>
+  <span>I</span>
+    <span>N</span>
+  <span>A</span>
+  <span>H</span>
+    <span>&#9733</span>
+  <span>G</span>
+    <span>L</span>
+    <span>O</span>
+  <span>R</span>
+  <span>Y</span>
+</div>
+
+
+
+
+</center>
+{%endblock content%}
+<p>page was last updated on:{{last_updated|date:"D d F Y"  }}</p>
