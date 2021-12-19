@@ -123,5 +123,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'goms_site/static'), ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressManifestStaticFilesStorage'
 
+
+DEFAULT_AUTO_FIELD =  'django.db.models.AutoField'
+
 django_heroku.settings(locals())
 
