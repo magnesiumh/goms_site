@@ -1,1 +1,1 @@
-web: gunicorn gom_site.wsgi
+web: gunicorn goms_site.wsgi
