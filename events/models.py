@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Event(models.Model):
+    id = models.AutoField(primary_key=True)
     Event_Name = models.CharField(max_length=60)
     Venue = models.CharField(max_length=200,
                              blank=True)
