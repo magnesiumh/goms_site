@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class Page(models.Model):
+class page(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=60)
     permalink = models.CharField(max_length=12, unique=True)
