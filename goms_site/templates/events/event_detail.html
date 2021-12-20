@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+ {% extends "base.html" %}
+ <head><meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"> </head>
+ {% block title %}All Events{% endblock title %}
+
+{% block sidenav %}
+
+
+
+
+ {% endblock sidenav %}
+
+ {% block content %}
+<div style="font-size: 7vh;line-height:4px;" class="branch2">Service &nbsp;</div> <div style="display:flex;font-size: 7vh" class="branch3"><span>Details</span>
+     </div>
+  <div class="branch0">  
+    <div class="branch1">
+     
+    </div>
+
+<style> table{
+margin-left: -7em;}  </style>
+
+</div>
+ <table class="event">
+ <tr><td><ins>ID</ins>:</td><td><ins>{{ event.id }}</td></tr>
+ <tr><td><ins>Service Name</ins>:</td><td>{{ event.Event_Name}}</td></tr>
+ <tr><td><ins>Venue</ins>:</td><td>{{ event.Venue }}</td></tr>
+ <tr><td><ins>Service details</ins>:</td><center> <td class="branch1">{{ event.Event_details}}</td></center></tr>
+ <tr><td><ins>Date and Time of Service</ins>:</td><td>{{ event.Date_of_event|date:"M/d  H:i"}}</td></tr>
+
+ </table>
+
+ {% endblock content %}

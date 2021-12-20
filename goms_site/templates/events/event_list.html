@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+ {% extends "base.html" %}
+ <head><meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"> </head>
+ {% block title %}All Events{% endblock title %}
+ <body>
+
+
+{% block sidenav %}
+
+ <li><a href="../">Home</a></li>
+ 
+ {% endblock sidenav %}
+<style> div{
+margin-bottom: 5em;}  </style>
+
+</div>
+
+{% block content %}
+<div style="font-size: 7vh; line-height:4px;"  class="branch2">All &nbsp;</div> <div style="display:flex; font-size: 7vh" class="branch3"><span>Services<br></span>
+ </div>
+ <div class="branch0">  
+<div class="branch1">
+ 
+</div>
+
+<div id="event">
+ <table  style="border-collapse:collapse">
+
+<tr>
+  <tr
+
+ class="eventhdr"><th>Num</th><th>Service</th><th>Venue</th><th>Date</th>
+
+</tr>
+
+
+ {% for event in all_events %}
+ 
+   
+ <tr  class="eventrow {% cycle '' 'altrow' %}">
+  <td id ="linage"><a  href="show/{{event.id}}">{{ event.id }} </a></td>
+ <td>{{ event.Event_Name }}</td>
+ <td >{{ event.Venue }}</td>
+ <td>{{ event.Date_of_event|date:"M/d" }}</td>
+
+ 
+ </tr>
+
+ 
+
+ {% endfor %}
+ </table>
+</div>
+{% comment%}
+ <button onclick = "myFunction()"> <b >&darr;Less...&darr;</b> </button>
+ <button onclick = "myFunc()"> <b >&uarr;Less...&uarr;</b> </button>
+ 
+ <p id="me"> </p>
+
+ 
+ <script>
+var names = document.querySelectorAll("td"); 
+    
+ 
+  var n =0;
+ 
+  var g = names.valueOf().innerHTML;
+  function myFunction() 
+  {
+    n=n+4;   
+    
+  document.getElementById("me").innerHTML = n;
+  for( let x=0;x<names.length;x++){
+    
+    
+  if (x < n ) {names[x].style.display="none";}
+  
+    } 
+   } 
+  
+ </script>
+
+
+<script>
+  
+  var y=names.length-1;
+  var z = new Array();
+  
+  function myFunc() 
+  {
+    y=y-4;   
+    
+  document.getElementById("me").innerHTML = n;
+  for( let x=0;x<names.length;x++){
+    
+    
+  if (x > y ) {names[x].style.display="none"; z[x] = names[x];}
+
+   
+    } 
+   } 
+
+</script>
+
+
+<!--
+<script>
+
+
+
+function Fun() 
+
+  {  
+    
+    document.getElementById("me").valueOf().innerHTML = z;
+  for( let x=0;x<names.length;x++){
+  names[x].style.display=="table-cell"; 
+   } 
+  }
+
+</script>
+-->
+
+
+<aside>
+<div class="gomz">
+    <div class="goms-video-area mb-100">
+       <iframe src="https://drive.google.com/file/d/1-HvDY4JUaCefdhfN3HTMinKpbGiqanFp/preview" width="140" height="140" allow="autoplay"></iframe>
+    </div>
+</div>
+</aside>
+{%endcomment%}
+
+ </div>
+ {% endblock content %}
+
+
+  
+</body>
